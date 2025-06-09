@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36025.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectCheckPointage.Mobile", "ProjectCheckPointage.Mobile\ProjectCheckPointage.Mobile.csproj", "{664E6057-FD6B-4D76-9B17-16F4C88B0C5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectCheckPointage.Api", "ProjectCheckPointage.Api\ProjectCheckPointage.Api.csproj", "{07620E53-3A8E-419B-A78D-F4A09C6DD6CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{664E6057-FD6B-4D76-9B17-16F4C88B0C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664E6057-FD6B-4D76-9B17-16F4C88B0C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664E6057-FD6B-4D76-9B17-16F4C88B0C5C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{664E6057-FD6B-4D76-9B17-16F4C88B0C5C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{664E6057-FD6B-4D76-9B17-16F4C88B0C5C}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{664E6057-FD6B-4D76-9B17-16F4C88B0C5C}.Release|Any CPU.Deploy.0 = Debug|Any CPU
+		{07620E53-3A8E-419B-A78D-F4A09C6DD6CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07620E53-3A8E-419B-A78D-F4A09C6DD6CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07620E53-3A8E-419B-A78D-F4A09C6DD6CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07620E53-3A8E-419B-A78D-F4A09C6DD6CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DCE2200-C15A-4F39-8DDA-914A69494C93}
+	EndGlobalSection
+EndGlobal

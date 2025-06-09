@@ -1,0 +1,21 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ProjectCheckPointage.Mobile.Converters"
+             x:Class="ProjectCheckPointage.Mobile.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Dictionnaires fusionnés -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Convertisseur -->
+            <local:BoolToColorConverter x:Key="BoolToColorConverter" />
+            <local:BoolToButtonColorConverter x:Key="BoolToButtonColorConverter" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

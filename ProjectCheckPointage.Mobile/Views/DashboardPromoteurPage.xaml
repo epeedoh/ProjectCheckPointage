@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectCheckPointage.Mobile.Views.DashboardPromoteurPage"
+             BackgroundColor="#F6F6F6"
+             NavigationPage.HasNavigationBar="False"
+             Title="Dashboard Promoteur">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Bandeau incurvé + logo -->
+        <VerticalStackLayout Spacing="0" HeightRequest="200">
+            <Border BackgroundColor="#003F5C" VerticalOptions="Start"
+                    HeightRequest="280" WidthRequest="500"
+                    StrokeShape="RoundRectangle 0,0,100,100"
+                    HorizontalOptions="Fill" />
+            <Grid VerticalOptions="Start" Margin="0,-180,0,0">
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Image Source="mtn_logo.png" HeightRequest="50"/>
+                    <Label Text="MoMo from MTN"
+                           TextColor="Gold"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+
+        <!-- Contenu -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="10" Spacing="20">
+
+                <!-- Carte principale -->
+                <Border BackgroundColor="White"
+                        StrokeShape="RoundRectangle 10" Stroke="#DDD"
+                        Padding="20"
+                        Shadow="Medium"
+                        Margin="0,40,0,0">
+
+                    <VerticalStackLayout Spacing="20">
+
+                        <!-- Réunion du jour -->
+                        <Border BackgroundColor="#F9F9F9" Stroke="#DDD" StrokeShape="RoundRectangle 15" Padding="15">
+                            <VerticalStackLayout>
+                                <Label Text="🗓 Réunion du jour" FontAttributes="Bold" FontSize="16" TextColor="#003F5C"/>
+                                <Label Text="Heure : 10h00" FontSize="14" TextColor="Black"/>
+                                <Label Text="Zone : A / Superviseur : Dupont" FontSize="14" TextColor="Black"/>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Statut du jour -->
+                        <Border BackgroundColor="#E6F4EA" Stroke="#32A852" StrokeShape="RoundRectangle 15" Padding="15">
+                            <VerticalStackLayout>
+                                <Label Text="✔️ Vous avez pointé ce matin" TextColor="#1E7D42" FontAttributes="Bold" FontSize="14"/>
+                            </VerticalStackLayout>
+                        </Border>
+
+                       
+                    </VerticalStackLayout>
+                </Border>
+
+                <VerticalStackLayout Spacing="10" VerticalOptions="End" >
+                    <!-- Scanner QR code -->
+                    <Button Text="📷 Scanner pour pointer"
+                         BackgroundColor="#003F5C"
+                         TextColor="White"
+                         CornerRadius="25"
+                         HeightRequest="50"
+                         FontAttributes="Bold"/>
+
+                    <!-- Historique des pointages -->
+                    <Border BackgroundColor="#F9F9F9" Stroke="#DDD" StrokeShape="RoundRectangle 10" Padding="15">
+                        <VerticalStackLayout>
+                            <Label Text="📝 Historique pointages" FontAttributes="Bold" FontSize="16" TextColor="#003F5C"/>
+                            <Label Text="18/05 – Pointé à 09h12" FontSize="14" TextColor="Black"/>
+                            <Label Text="17/05 – Pointé à 09h09" FontSize="14" TextColor="Black"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Bouton consulter rapport -->
+                    <Button Text="📄 Consulter mes rapports"
+                         BackgroundColor="#007BFF"
+                         TextColor="White"
+                         CornerRadius="25"
+                         HeightRequest="50"
+                         FontAttributes="Bold"/>
+                </VerticalStackLayout>
+                
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

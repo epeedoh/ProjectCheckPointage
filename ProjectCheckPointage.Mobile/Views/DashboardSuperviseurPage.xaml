@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectCheckPointage.Mobile.Views.DashboardSuperviseurPage"
+            BackgroundColor="#F6F6F6"
+             NavigationPage.HasNavigationBar="False"
+             Title="Dashboard">
+
+    <Grid RowDefinitions="Auto,*">
+
+        <!-- Bandeau incurvé + logo -->
+        <VerticalStackLayout Spacing="0" HeightRequest="200">
+            <Border BackgroundColor="#003F5C" VerticalOptions="Start"
+                    HeightRequest="280" WidthRequest="500"
+                    StrokeShape="RoundRectangle 0,0,100,100"
+                    HorizontalOptions="Fill" />
+
+            <Grid VerticalOptions="Start" Margin="0,-180,0,0">
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Image Source="mtn_logo.png" HeightRequest="50"/>
+                    <Label Text="MoMo from MTN"
+                           TextColor="Gold"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+
+        <!-- Contenu -->
+        <ScrollView Grid.Row="1">
+            
+            
+            
+            <VerticalStackLayout Padding="8" Spacing="20">
+
+                <!-- QR Code -->
+                <Border BackgroundColor="#F9F9F9" Stroke="#DDD" StrokeShape="RoundRectangle 10" Padding="10" HorizontalOptions="Center">
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" MinimumWidthRequest="350">
+                        <Image Source="{Binding QrCodeImage}" HeightRequest="100" WidthRequest="100" />
+                        <VerticalStackLayout>
+                            <Label Text="SUP-001|ZONE-A|" FontAttributes="Bold" FontSize="16" TextColor="#003F5C" HorizontalOptions="Center"/>
+                            <Label Text="Luxus Dupond" HorizontalOptions="Start" FontAttributes="Bold" FontSize="16" TextColor="#003F5C"/>
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
+                </Border>
+
+                <!-- Carte blanche principale -->
+                <Border BackgroundColor="White" Stroke="#DDD"
+                        StrokeShape="RoundRectangle 20"
+                        Padding="10"
+                        Shadow="Large"
+                        Margin="0,0,0,0">
+                    <VerticalStackLayout Spacing="20">
+
+                        <!-- Statistiques de pointages -->
+                        <HorizontalStackLayout Spacing="10">
+                            <Border BackgroundColor="#003F5C" StrokeShape="RoundRectangle 20" Padding="15">
+                                <VerticalStackLayout>
+                                    <Label Text="Aujourd'hui" TextColor="White" FontSize="12" />
+                                    <Label Text="18 pointages" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                                </VerticalStackLayout>
+                            </Border>
+                            <Border BackgroundColor="#007BFF" StrokeShape="RoundRectangle 20" Padding="15">
+                                <VerticalStackLayout>
+                                    <Label Text="Absents" TextColor="White" FontSize="12" />
+                                    <Label Text="5 Membres" TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </HorizontalStackLayout>
+
+
+                        <!-- Statistiques -->
+                        <Border BackgroundColor="#F9F9F9" Stroke="#DDD" StrokeShape="RoundRectangle 10" Padding="15">
+                            <VerticalStackLayout>
+                                <Label Text="📊 Statistiques" FontAttributes="Bold" FontSize="16" TextColor="#003F5C"/>
+                                <Label Text="Zone A : 86% de présence" FontSize="14" TextColor="Black"/>
+                                <Label Text="Promoteur X : 3/5 pointés" FontSize="14" TextColor="Black"/>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <HorizontalStackLayout Spacing="2">
+                                 <!-- Réunions à venir -->
+                            <Border BackgroundColor="#F9F9F9" Stroke="#DDD" StrokeShape="RoundRectangle 10" Padding="10">
+                                <ScrollView >
+                                        <VerticalStackLayout>
+
+                                            <Label Text="📅 Réunions à venir" FontAttributes="Bold" FontSize="14" TextColor="#003F5C"/>
+                                            <Label Text="Zone A – 10h00" FontSize="12" TextColor="Black"/>
+                                            <Label Text="Zone B – 15h00" FontSize="12" TextColor="Black"/>
+                                        </VerticalStackLayout>
+                                </ScrollView>
+                               
+                            </Border>
+
+                            <!-- Derniers pointages -->
+                            <Border BackgroundColor="#F9F9F9" Stroke="#DDD" StrokeShape="RoundRectangle 10" Padding="10" >
+                                <VerticalStackLayout>
+                                    <Label Text="📝 Derniers pointages" FontAttributes="Bold" FontSize="14" TextColor="#003F5C"/>
+                                    <Label Text="09h12 – Traoré (Zone A)" FontSize="12" TextColor="Black"/>
+                                    <Label Text="09h10 – Koné (Zone A)" FontSize="12" TextColor="Black"/>
+                                </VerticalStackLayout>
+                            </Border>
+      
+                        </HorizontalStackLayout>
+                 
+                      
+                    </VerticalStackLayout>
+                </Border>
+
+
+
+
+               
+
+
+
+                <!-- Bouton rapport -->
+                <Button Text="📄 Générer rapport"
+          BackgroundColor="#003F5C"
+          TextColor="White"
+          CornerRadius="25"
+          HeightRequest="50"
+          FontAttributes="Bold"/>
+                
+                
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

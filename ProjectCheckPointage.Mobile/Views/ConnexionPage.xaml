@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjectCheckPointage.Mobile.Views.ConnexionPage"
+             BackgroundColor="#F6F6F6"
+             NavigationPage.HasNavigationBar="False"
+             Title="">
+
+    <Grid RowDefinitions="Auto,*" >
+
+        <!-- Zone bandeau incurvé -->
+        <VerticalStackLayout Spacing="0" HeightRequest="200">
+
+            <!-- Fond bleu incurvé (bas seulement) -->
+            <Border VerticalOptions="Start" HorizontalOptions="Fill"
+                BackgroundColor="#003F5C"
+                HeightRequest="280" WidthRequest="500"
+                StrokeShape="RoundRectangle 0,0,100,100" />
+
+            <!-- Logo centré dans un Grid superposé -->
+            <Grid VerticalOptions="Start" Margin="0,-180,0,0">
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Image Source="mtn_logo.png" HeightRequest="50"/>
+                    <Label Text="MoMo from MTN"
+                           TextColor="Gold"
+                           FontAttributes="Bold"
+                           FontSize="16"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Grid>
+        </VerticalStackLayout>
+
+        <!-- Contenu principal -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="20" Padding="20,0">
+
+                <!-- Carte blanche principale -->
+                <Border BackgroundColor="White"
+                        StrokeShape="RoundRectangle 40,40"
+                        Margin="0,0,0,0"
+                        Padding="25"
+                        Shadow="Large">
+
+                    <VerticalStackLayout Spacing="15">
+                        <!--<Label Text="Salut, Edoh"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center" />
+                        <Label Text="05 04 89 58 19"
+                               FontSize="16"
+                               HorizontalOptions="Center" />
+                        <Label Text="Dernière connexion: 14:31 30/04/25"
+                               FontSize="12"
+                               TextColor="Gray"
+                               HorizontalOptions="Center"/>-->
+
+                        <VerticalStackLayout IsVisible="{Binding AfficherInfos}">
+                            <Label Text="{Binding NomUtilisateur}" />
+                            <Label Text="{Binding NomUtilisateur}" />
+                            <Label Text="{Binding DerniereConnexion}" />
+                        </VerticalStackLayout>
+
+                     
+                                    <Entry Placeholder="Numéro" x:Name="NumeroEntry" 
+                                           
+                                       Text="{Binding Numero}"
+                                      FontSize="14"
+                                     MaxLength="10"
+                                      Keyboard="Numeric"
+                                       TextColor="Black"
+                                       BackgroundColor="Transparent"
+                                       PlaceholderColor="Gray" />
+                          
+
+                        <!-- Espacement -->
+                        <!--<BoxView HeightRequest="2" Color="#003F5C" />-->
+
+                        <!-- Champ PIN -->
+                        <!-- Espacement -->
+                       
+
+                        <!-- Champ PIN avec arrondi -->
+                        <Entry x:Name="PinEntry"
+                           Placeholder="Code Pin"
+                           Text="{Binding Pin}"
+                           IsPassword="True"
+                           FontSize="14"
+                           TextColor="Black"
+                           BackgroundColor="Transparent"
+                           PlaceholderColor="Gray"
+                           MaxLength="5"
+                           Keyboard="Numeric" />
+
+
+                        <Label Text="{Binding ErrorMessage}"
+                           TextColor="Red"
+                           FontSize="12"
+                           IsVisible="{Binding PinInvalide}"
+                           HorizontalOptions="Start"/>
+
+
+
+                        <!-- Liens -->
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                            <Label Text="Changer de Compte" TextColor="#007BFF" FontSize="10"/>
+                            <Label Text="Mot de passe oublié" TextColor="#007BFF" FontSize="10"/>
+                        </HorizontalStackLayout>
+
+                        <Button Text="SE CONNECTER"
+                            Command="{Binding ConnexionCommand}"
+                            TextColor="White"
+                            HeightRequest="50"
+                            CornerRadius="25"
+                            IsEnabled="{Binding IsFormValid}">
+                            <Button.BackgroundColor>
+                                <Binding Path="IsFormValid" Converter="{StaticResource BoolToButtonColorConverter}" />
+                            </Button.BackgroundColor>
+                        </Button>
+
+
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- CGU -->
+                <Label Text="En utilisant cette application, vous acceptez nos Conditions générales d’utilisation (CGU) et notre politique de confidentialité"
+                       FontSize="11"
+                       TextColor="Gray"
+                       HorizontalTextAlignment="Center"
+                       Padding="10"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
